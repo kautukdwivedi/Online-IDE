@@ -23,32 +23,13 @@
     <button id="run" onclick="run()">Run (Ctrl + Enter)</button>
 <div class="wrapper">
     <div class="container res">
-        <div class="line-nums" id="defaultNum"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-            <span>20</span><span>21</span><span>22</span><span>23</span></div>
+        <div class="line-nums" id="defaultNum"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
 		<textarea  id="source" spellcheck="false">
 #include <iostream>
-using namespace std;
-
-int main() {
-    int num, originalNum, remainder, result = 0;
-    cin >> num;
-    originalNum = num;
-
-    while (originalNum != 0) {
-        remainder = originalNum % 10;
-        result += remainder * remainder * remainder;
-        originalNum /= 10;
-    }
-
-    if (result == num)
-        cout << num << " is an Armstrong number.";
-    else
-        cout << num << " is not an Armstrong number.";
-
-    cout<<"\nBy Kautuk Dwivedi";
-
-    return 0;
-}</textarea>
+    int main() {
+        std::cout << "Hello World!";
+        return 0;
+  }</textarea>
     </div>
     
     <textarea id="input">Give Input</textarea>
