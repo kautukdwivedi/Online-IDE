@@ -1,65 +1,136 @@
-body{
-    background-color: #000000;
-    font-family: monospace;
-    margin: none;
-    text-decoration-color: #f5eded !important; 
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+
+body {
+  background-color: #0d1117;
+  font-family: 'Fira Code', monospace;
+  margin: none;
+  text-decoration-color: #f5eded !important;
 }
 
 #source{
-    width: calc(50% - 8px); 
-    height: 50%; 
-    resize: vertical;
+  width: calc(55% - 12px); 
+  min-height: 400px; 
+  resize: none;
 }	
-textarea{
-	overflow:hidden;
-	line-height: 13px;
-	font-size: 13px;
-	border:1px solid #999;
-	padding:10px;
-	font-family: monospace;
-	margin:1px;
-	display:block;
-    outline:none;
-    color: #f5eded;
-    background-color: #3e3636;
+
+textarea {
+  overflow: hidden;
+  line-height: 15px;
+  font-size: 15px;
+  border: 1px solid #999;
+  padding: 10px;
+  font-family: 'Fira Code', monospace;
+  margin: 10px;
+  display: block;
+  outline: none;
+  color: #f5eded;
+  background-color: #161b22;
+  border-radius: 10px;
 }
 
-.container{
-    position:relative;
-    width: auto;
-    height: auto;
+#source{
+    padding-left: 30px;
 }
-.line-nums{
-	font-size:13px;
-	line-height:13px;
-	padding:10px 5px;
-    background: rgb(199, 185, 185);
-	position: absolute;
-	width: 25px;
-	left: -27px;
-	bottom: 0;
-	top: 0;
-	text-align:right;
-	border:1px solid #999;
+
+.container {
+  position: relative;
+  width: auto;
+  margin-left:10px;
+  height: auto;
 }
-span{
-    color: #3e3636 ;
-    display: block;
+.line-nums {
+  font-size: 15px;
+  line-height: 15px;
+  padding: 10px 5px;
+  background: rgb(199, 185, 185);
+  position: absolute;
+  width: 25px;
+  bottom: 0;
+  top: 0;
+  text-align: right;
+  border: 1px solid #999;
+  border-radius:  10px 0px 0px 10px;
 }
-#lang,button{
-    background-color:#d72323;
-    color:#f5eded; 
-    box-shadow: #f5eded;
+span {
+  color: #3e3636;
+  display: block;
 }
+
+#lang,
+button {
+  background-color: #68d646;
+  color: #f5eded;
+  box-shadow: #f5eded;
+  height: 30px;
+  font-size: 15px;
+}
+
 #lang:hover {
-    background-color: #2f5555; 
- } 
- button:hover {
-    background-color: #2f5555; 
-  } 
+  background-color: #2f5555;
+}
+button:hover {
+  background-color: #2f5555;
+  color:#f5eded ;
+}
 
-#input{
-    width: calc(50% - 8px); 
-    height: 10%; 
+#input {
+  height: 25%;
+  width: calc(55% - 8px); 
+  resize: vertical;
+  border-radius: 10px;
+}
+h4 {
+  color: #f5eded;
+  margin: auto;
+  margin-top: 1%;
+}
+#output {
+  width: 43%;
+  height: 97%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  resize: none;
+}
+@media only screen and (max-width: 900px) {
+  #input {
+    width: calc(100% - 8px);
+    height: 15%;
     resize: vertical;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #source {
+    width: calc(100% - 8px);
+    height: 50%;
+    resize: vertical;
+    padding-left: 20px;
+  }
+
+  .container{
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .line-nums {
+    font-size: 12px;
+    line-height: 12px;
+    width: 15px;
+  }
+
+  textarea {
+    line-height: 12px;
+    font-size: 12px;}
+
+  #output {
+    width: calc(100% - 8px);
+    height: 35%;
+    top: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    resize: vertical;
+    position: relative;
+  }
 }

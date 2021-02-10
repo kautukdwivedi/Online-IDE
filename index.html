@@ -2,6 +2,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Online IDE</title>
+    <link rel="icon" type="image/jpg" href="/logo.jpg"/>
     <link rel="stylesheet" href="style.css">
     <script type="text/javascript" src="behave.js"></script>
     <script type="text/javascript" src="num.js"></script>
@@ -9,9 +10,21 @@
 
 <body>
     <h4>Source Code</h4>
-    <div class="container">
-        <div class="line-nums"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
-            <span>20</span><span>21</span><span>22</span><span>23</div>
+    <select id="lang">
+        <option>Bash</option>
+        <option>C#</option>
+        <option selected>C++</option>
+        <option>C</option>
+        <option>Java</option>
+        <option>Python</option>
+        <option>Ruby</option>
+    </select>
+
+    <button id="run" onclick="run()">Run (Ctrl + Enter)</button>
+<div class="wrapper">
+    <div class="container res">
+        <div class="line-nums" id="defaultNum"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span>
+            <span>20</span><span>21</span><span>22</span><span>23</span></div>
 		<textarea  id="source" spellcheck="false">
 #include <iostream>
 using namespace std;
@@ -37,27 +50,12 @@ int main() {
     return 0;
 }</textarea>
     </div>
+    
+    <textarea id="input">Give Input</textarea>
 
-    <h4>Language</h4>
-    <select id="lang">
-        <option>Bash</option>
-        <option>C#</option>
-        <option selected>C++</option>
-        <option>C</option>
-        <option>Java</option>
-        <option>Python</option>
-        <option>Ruby</option>
-    </select>
+    <textarea readonly id="output">Output</textarea>
 
-    <h4>Input</h4>
-    <textarea id="input">121</textarea>
-
-    </br></br>
-    <button id="run" onclick="run()">Run (Ctrl + Enter)</button>
-
-    <p style="width: 50%; text-align: center; position: absolute; color: #aaa;">Made By K.D.</p>
-
-    <textarea readonly id="output" style="width: 50%; height: 100%; position: fixed; top: 0; right: 0; resize: none;"></textarea>
+</div>
 
     <script type="text/javascript" src="app.js"></script>
 </body>

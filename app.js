@@ -95,5 +95,31 @@ API_KEY = "05178919e1mshca5b6d9b53b9541p110a90jsn9b38827e5160"; // API Key of ju
                 this.selectionStart = this.selectionEnd = start + append.length;
             }
         });
+        $(document).ready(function(){
+            $("#lang").change(function(){
+                var selectedCountry = $(this).children("option:selected").val();
+                if( selectedCountry.localeCompare("C++") == 0){
+                    document.getElementById("source").innerHTML = '#include <iostream>\nint main() {\n   std::cout << "Hello World!";\n return 0;\n}';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>"
+                }else if( selectedCountry.localeCompare("Bash") == 0){
+                    document.getElementById("source").innerHTML = '#!/bin/bash\necho Hello World  ';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span><span>2</span>"
+                }else if( selectedCountry.localeCompare("C#") == 0){
+                    document.getElementById("source").innerHTML = 'namespace HelloWorld\n { \n  class Hello {\n  static void Main(string[] args)\n   {\n    System.Console.WriteLine("Hello World!");\n   }\n  }\n }  ';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>"
+                }else if( selectedCountry.localeCompare("C") == 0){
+                    document.getElementById("source").innerHTML = '#include <stdio.h>\nint main() {\n printf("Hello, World!");\n return 0;\n}';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>"
+                }else if( selectedCountry.localeCompare("Java") == 0){
+                    document.getElementById("source").innerHTML = 'public class Main {\n public static void main(String[] args) {\n   System.out.println("Hello, World!");\n  }\n}';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span><span>2</span><span>3</span><span>4</span><span>5</span>"
+                }else if( selectedCountry.localeCompare("Python") == 0){
+                    document.getElementById("source").innerHTML = "print('Hello, world!')";
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span>"
+                }else if( selectedCountry.localeCompare("Ruby") == 0){
+                    document.getElementById("source").innerHTML = 'puts "Hello, World!"';
+                    document.getElementById("defaultNum").innerHTML = "<span>1</span>"
+                }
+            });    
+        });
 
-        $("#source").focus();
